@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr Somani's Homoeopathy</title>
+<meta name="theme-color" content="#17392e">
+<link rel="icon" href="/brand/flower-96.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/app.css">
+<script src="/theme.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sb" aria-label="Main navigation">
+    <div class="sb-brand">
+      <span class="sb-logo"><img src="/brand/flower-96.png" alt="" width="34" height="36"></span>
+      <div><b>Dr Somani's</b><small>Homoeopathy</small></div>
+    </div>
+    <nav class="sb-nav">
+      <button class="nav-item" data-act="nav" data-view="board"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="4" width="5" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="10" y="4" width="5" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="17" y="4" width="4" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Reminders</span><em class="badge" data-badge hidden></em></button>
+      <button class="nav-item" data-act="nav" data-view="calendar"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Calendar</span></button>
+      <button class="nav-item" data-act="nav" data-view="timeline"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h7M6 12h10M10 18h11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Timeline</span></button>
+      <button class="nav-item" data-act="nav" data-view="patients"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.4 3.6 5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Patients</span></button>
+      <button class="nav-item" data-act="nav" data-view="settings"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Settings</span></button>
+    </nav>
+    <div class="sb-foot">
+      <button class="icon-btn" data-act="theme" aria-label="Toggle dark mode" title="Light / dark"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></button>
+      <div class="sb-user"><span class="avatar sm" id="uAvatar">A</span><div><b id="uName">…</b><small id="uEmail"></small></div></div>
+      <button class="icon-btn" data-act="logout" aria-label="Sign out" title="Sign out"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5M15 12H3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <span class="tb-logo"><img src="/brand/flower-96.png" alt="" width="28" height="30"></span>
+      <h1 class="page-title" id="pageTitle">Reminders</h1>
+      <div class="seg loc-seg" role="radiogroup" aria-label="Clinic" id="locSeg"></div>
+      <button class="btn primary tb-add" data-act="add"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>New patient</span></button>
+      <button class="icon-btn tb-more" data-act="nav" data-view="settings" aria-label="Settings"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+    </header>
+    <main id="view" class="view" tabindex="-1"><div class="loading"><span class="spin"></span>Loading…</div></main>
+  </div>
+</div>
+
+<nav class="bnav" aria-label="Main navigation">
+  <button data-act="nav" data-view="board"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="4" width="5" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="10" y="4" width="5" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="17" y="4" width="4" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Reminders</span><em class="badge" data-badge hidden></em></button>
+  <button data-act="nav" data-view="calendar"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="5" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Calendar</span></button>
+  <button class="bnav-add" data-act="add" aria-label="New patient"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  <button data-act="nav" data-view="timeline"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h7M6 12h10M10 18h11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Timeline</span></button>
+  <button data-act="nav" data-view="patients"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.4 3.6 5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Patients</span></button>
+</nav>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden></aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>

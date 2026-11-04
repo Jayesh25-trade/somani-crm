@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+# runtime data — never commit patient records or password hashes
+data/db.json
+data/db.json.tmp
+data/users.json
