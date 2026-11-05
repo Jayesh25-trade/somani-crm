@@ -11,8 +11,13 @@ const PORT = process.env.PORT || 4180;
 const PUB = path.join(__dirname, 'public');
 const USERS_FILE = path.join(__dirname, 'data/users.json');
 if (!fs.existsSync(USERS_FILE)) {
-  console.error('No admin user yet. Create one first:\n  node scripts/create-admin.js <email> <password>');
-  process.exit(1);
+  const adminEmail = (process.env.ADMIN_EMAIL || 'admin@drsomanihomoeopathy.com').trim().toLowerCase();
+  const adminPass = process.env.ADMIN_PASSWORD || 'admin@12345';
+  const salt = crypto.randomBytes(16).toString('hex');
+  const hash = crypto.scryptSync(adminPass, salt, 64).toString('hex');
+  fs.mkdirSync(path.dirname(USERS_FILE), { recursive: true });
+  fs.writeFileSync(USERS_FILE, JSON.stringify([{ id: 'u1', email: adminEmail, name: 'Admin', role: 'admin', salt, hash }], null, 2));
+  console.log(`Auto-created initial admin: ${adminEmail}`);
 }
 const USERS = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
 const PROD = process.env.NODE_ENV === 'production' || !!process.env.HTTPS;  // behind HTTPS
