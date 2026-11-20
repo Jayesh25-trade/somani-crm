@@ -99,7 +99,7 @@ function defaultSettings() {
     doctorDefault: { pune: 'kushal', jalgaon: 'antim' },
     schedule: DEFAULT_SCHEDULE.map(s => ({ ...s })),
     clinics: {
-      jalgaon: { name: 'Jalgaon', phone: '+91 98341 72124' },
+      jalgaon: { name: 'Jalgaon', phone: '+91 92702 78668' },
       pune: { name: 'Pune (Wakad)', phone: '+91 98341 72124' },
     },
   };
